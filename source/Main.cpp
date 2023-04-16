@@ -1,28 +1,15 @@
-#include <GLFW/glfw3.h>
-
-#include "Entity.hpp"
+#include "Window.hpp"
 #include <iostream>
 
 int main() {
-    glfwInit();
+    Engine::Window window(800, 600, "OpenGL is cool ig");
 
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+    window.clearColor(glm::vec3(127.0f, 239.0f, 183.0f));
 
-    GLFWwindow* window = glfwCreateWindow(800, 600, "OpenGL Engine", nullptr, nullptr);
-    if (window == nullptr) {
-        std::cout << "Failed to initialize GLFW" << std::endl;
+    while (!window.shouldClose()) {
+        window.update();
+
     }
-    glfwMakeContextCurrent(window);
-
-    while (!glfwWindowShouldClose(window)) {
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-    }
-    glfwDestroyWindow(window);
-    glfwTerminate();
 
     return 0;
 }

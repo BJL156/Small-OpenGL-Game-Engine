@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Program Files\Programming\C++\Libraries\OpenGL\Engines\Game Engine\dependencies\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)dependencies\GLFW\include;$(SolutionDir)dependencies\GLM\glm;D:\Program Files\Programming\C++\Libraries\OpenGL\Engines\Game Engine\dependencies\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -121,7 +121,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Program Files\Programming\C++\Libraries\OpenGL\Engines\Game Engine\dependencies\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)dependencies\GLFW\include;$(SolutionDir)dependencies\GLM\glm;D:\Program Files\Programming\C++\Libraries\OpenGL\Engines\Game Engine\dependencies\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,8 +133,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="source\Entity.cpp" />
+    <ClCompile Include="glad.c" />
     <ClCompile Include="source\Main.cpp" />
+    <ClCompile Include="source\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="premake5.exe" />
@@ -142,7 +143,7 @@
     <None Include="setup.bat" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\Entity.hpp" />
+    <ClInclude Include="source\Window.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
